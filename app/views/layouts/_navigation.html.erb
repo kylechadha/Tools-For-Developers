@@ -21,7 +21,7 @@
       </form> -->
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li class="navtext">Logged in as <%= link_to("#{current_user.name}", tools_path) + " (#{current_user.email})" %></li>
+          <li class="navtext">Logged in as <%= "#{current_user.name} (#{current_user.email})" %></li>
             <li><%= link_to 'Log out', logout_path, method: 'delete' %></li>
         <% else %>
           <li><%= link_to 'Log in', login_path %></li>
@@ -31,3 +31,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>  
+
+<!-- "#{link_to("#{current_user.name}", tools_path)}" + --> 
