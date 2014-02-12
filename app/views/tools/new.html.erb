@@ -1,0 +1,49 @@
+<div class="container">
+
+  <h1>Add a New Resource</h1>
+  
+  <%= form_for @tool do |f| %>
+    <fieldset>
+      <%= f.label :app_type %><br>
+      <!-- Change to select -->
+      <%= f.select :app_type_id, AppType.all.collect {|a| a.name} %>
+      <div id="other">
+        Other:<%= f.text_field :app_type_id %>
+      </div>
+    </fieldset>
+
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :desc %>
+      <%= f.text_field :desc %>
+    </div>
+    
+    <div>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+  
+    <fieldset>
+      <%= f.label :category %><br>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    </fieldset>
+  
+    <div><%= f.submit %></div>
+  
+  <% end %>
+
+</div>
+
+<script>
+  $("#tool_app_type_id").change(function(){
+    if (this.selectedIndex == 6) {
+      $("#other").show();
+    } else {
+      $("#other").hide();
+    }
+  });
+</script>

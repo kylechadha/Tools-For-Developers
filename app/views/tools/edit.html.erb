@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h1>Edit Resource</h1>
+  
+  <%= form_for @tool do |f| %>
+    <fieldset>
+      <%= f.label :app_type %><br>
+      <%= f.select :app_type_id, AppType.all.collect {|a| a.name} %>
+    </fieldset>
+
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :desc %>
+      <%= f.text_field :desc %>
+    </div>
+    
+    <div>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+  
+    <fieldset>
+      <%= f.label :category %><br>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    </fieldset>
+  
+    <div><%= f.submit %></div>
+  
+  <% end %>
+
+</div>

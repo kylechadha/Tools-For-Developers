@@ -1,0 +1,17 @@
+<div class="container">
+  
+  <h2>Category: <%= render @tool.categories %></h2>
+  
+  <div class="screenshot">Image!</div>
+
+  <div>
+    <h3><%= @tool.name %></h3>
+    <h4><%#= render @tool.app_types %></h4>    
+    <h4><%= @tool.desc %></h4>
+    <h4><a href="<%= @tool.url %>"><%= @tool.url %></a></h4>
+  </div>
+  
+  <br><br>
+  <%= link_to "Return to all submissions", tools_path %>
+
+</div>

@@ -1,0 +1,82 @@
+
+$navbar-height: 80px;
+$navbar-default-color: white;
+$navbar-default-link-color: #83c4d8;
+$navbar-default-link-hover-color: black;
+$navbar-default-bg: #2d3538;
+$navbar-border-radius: 0px;
+
+$font-size-base: 16px;
+
+@import url(http://fonts.googleapis.com/css?family=Niconne);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Gilda+Display);
+@import "bootstrap";
+
+body {
+  background-color: white;
+}
+
+.navtext {
+  color: white;
+  padding: 30px 0;
+  font-size: 14px;
+}
+
+.navtext a {
+  padding: 0px 0px !important;
+}
+
+button a {
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#welcome {
+
+  h1 {
+    color: white;
+    font-size: 120px;
+    font-family: 'Gilda Display', cursive;
+  }
+
+  h2 {
+    color: rgb(175,175,175);
+    span {
+      color: tomato;
+    }
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  #logo {
+    float: left;
+  }
+
+  #banner {
+    margin-left: 60px;
+  }
+}
+
+.screenshot {
+  height: 200px;
+  width: 200px;
+  border: 5px solid skyblue;
+  float: left;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+.table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.override {
+  vertical-align: text-top;
+}

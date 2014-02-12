@@ -1,0 +1,38 @@
+
+<div class="container">
+  <button type="button" class="btn btn-primary btn-default pull-right"><span class="glyphicon glyphicon-plus"></span> <%= link_to "Add a Resource", new_tool_path %></button>
+
+  <h2>List of Resources</h2>
+
+  <table class="table table-striped">
+  <tr>
+    <th>Screenshot</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>URL</th>
+    <th>Category</th>
+    <th>App Type</th>
+    <th>Creator</th>
+    <th>Admin</th>
+  </tr>
+  <% @tools.each do |tool| %>
+  <tr>
+    <td></td>
+    <td><%= tool.name %></td>
+    <td><%= tool.desc %></td>
+    <td><a href="<%= tool.url %>"><%= tool.url %></a></td>
+    <td><ul><%= render tool.categories %></ul></td>
+    <td><%= tool.app_type_id %></td>
+    <td><%= tool.user ? tool.user.name : "" %></td>
+    <td>
+      <ul>
+        <li><%= link_to 'View', tool_path(tool) %></li>
+        <li><%= link_to 'Edit', edit_tool_path(tool) %></li>
+        <li><%= link_to 'Delete', tool, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+      </ul>
+    </td>
+  </tr>
+  <% end %>
+  </table>
+  
+</div>
