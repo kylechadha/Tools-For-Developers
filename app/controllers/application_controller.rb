@@ -14,6 +14,18 @@ class ApplicationController < ActionController::Base
       User.find_by(id: session[:user_id]) rescue nil
     end
   end
+
+  helper_method :page
+
+  def page
+    @page || ''
+  end
+
+  helper_method :navigation
+
+  def navigation
+    @navigation || 'layouts/navigation'
+  end
   
   def login_required
     unless current_user

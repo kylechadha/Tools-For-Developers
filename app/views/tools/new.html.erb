@@ -1,3 +1,5 @@
+<% @navigation = 'layouts/navigation' %>
+
 <div class="container">
 
   <h1>Add a New Resource</h1>
@@ -31,7 +33,12 @@
       <%= f.label :category %><br>
       <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
     </fieldset>
-  
+
+    <div>
+      <%= f.label :screenshot %>
+      <%= f.file_field :screenshot %>
+    </div>
+    <br>
     <div><%= f.submit %></div>
   
   <% end %>

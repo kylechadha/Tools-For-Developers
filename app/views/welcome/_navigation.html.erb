@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid pull-right">
+      <ul class="nav navbar-nav">
+        <% if current_user %>
+          <li class="navtext">Logged in as <%= link_to("#{current_user.name}", tools_path) + " (#{current_user.email})" %></li>
+            <li><%= link_to 'Log out', logout_path, method: 'delete' %></li>
+        <% else %>
+          <li><%= link_to 'Log in', login_path %></li>
+          <li><%= link_to 'Sign up', new_user_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>  

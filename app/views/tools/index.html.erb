@@ -1,6 +1,7 @@
+<% @navigation = 'layouts/navigation' %>
 
 <div class="container">
-  <button type="button" class="btn btn-primary btn-default pull-right"><span class="glyphicon glyphicon-plus"></span> <%= link_to "Add a Resource", new_tool_path %></button>
+  <button type="button" class="btn btn-info btn-default pull-right"><span class="glyphicon glyphicon-plus"></span> <%= link_to "Add a Resource", new_tool_path %></button>
 
   <h2>List of Resources</h2>
 
@@ -17,7 +18,7 @@
   </tr>
   <% @tools.each do |tool| %>
   <tr>
-    <td></td>
+    <td><%= tool.screenshot_file_size ? image_tag( tool.screenshot.url , width: '100') : "" %></td>
     <td><%= tool.name %></td>
     <td><%= tool.desc %></td>
     <td><a href="<%= tool.url %>"><%= tool.url %></a></td>

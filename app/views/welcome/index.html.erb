@@ -1,6 +1,9 @@
+<% @page = "welcome" %>
+<% @navigation = 'navigation' %>
+
 <div class="container">
 
-  <div id="welcome">
+  <div id="content">
     <div id="logo"><%= image_tag("squid_ace_of_spades.png", size: "225x346") %></div>
     <div id="banner">
       <h1>DevSpades</h1>
@@ -8,7 +11,7 @@
       
       <br>
       
-      <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-leaf"></span> &nbsp;<%= link_to "Get Started", tools_path %></button>
+      <button type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-leaf"></span> &nbsp;<%= link_to "Get Started", tools_path %></button>
 
       <%#= link_to " Get Started", tools_path, class:"btn btn-primary btn-lg glyphicon glyphicon-leaf override" %>      
     </div>
