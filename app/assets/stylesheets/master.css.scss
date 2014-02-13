@@ -4,13 +4,12 @@
 $font-size-base: 16px;
 
 $navbar-height: 60px;
-$navbar-default-bg: rgb(50, 50, 50);
+$navbar-default-bg: rgb(255, 255, 255);
 $navbar-border-radius: 0px;
 
 $navbar-default-color: white;
-$navbar-default-brand-color: rgb(240, 220, 107);
+$navbar-default-brand-color: white;
 $navbar-default-link-color: white;
-$navbar-default-link-hover-color: rgb(240, 220, 107);
 
 /* Bootstrap Import */
 
@@ -25,23 +24,64 @@ $navbar-default-link-hover-color: rgb(240, 220, 107);
 /* Master Style */
 
 body {
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   font-family: 'Lato', cursive;
 }
 
 /* Navigation Style */
 
 .navbar {
-  // margin-bottom: 40px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
+}
+
+.navbar-collapse {
+  padding-right: 0;
 }
 
 .nav-custom {
   padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-nav {
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.navbar-tiles{
+  transition: background-color 2s, color 2s, border-bottom 0.1s;
+  box-sizing: border-box;
+  height: 60px;
+  &:hover {
+    transition: background-color 0.5s, color 0.5s, border-bottom 0s;
+    background-color: lighten(#444, 55%);
+    color: black;
+    border-bottom: 5px solid white;
+  }
+}
+
+.signup {
+  background-color: #444;
+  padding-right: 17px;
+  padding-left: 35px;
+}
+
+.login {
+  background-color: #409f89;
+  padding-right: 20px;
+}
+
+.logout {
+  background-color: #444;
+}
+
+.current-user {
+  background-color: #409f89;
+  padding-bottom: 19px;
 }
 
 .navbar-header {
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(131, 196, 216);
   padding: 0 14px 0 24px;
   img {
     float: left;
@@ -54,12 +94,8 @@ body {
   font-size: 26px;
 }
 
-// .navbar-nav {
-//   background-color: rgb(240, 220, 107);
-// }
-
 .nav-text {
-  color: rgb(200, 200, 200);
+  color: white;
   padding: 19px 15px 0 0;
   // font-size: 14px;
   text-align: center;
@@ -79,30 +115,35 @@ button a {
 
 /* Search Bar Style */
 
-.search {
-  height: 60px;
-  background-color: rgb(230, 230, 230);
-  margin-bottom: 20px;
-  ul {
-    padding: 18px 0;
-    float: right;
-    font-size: 16px;
-    margin-right: 20px;
-    li {
-      display: inline;
-      margin: 0 10px;
-      span {
-        color: #2d3538;
-      }
-    }
-  }
-}
+// .search {
+//   height: 60px;
+//   background-color: rgb(230, 230, 230);
+//   margin-bottom: 20px;
+//   ul {
+//     padding: 18px 0;
+//     float: right;
+//     font-size: 16px;
+//     margin-right: 20px;
+//     li {
+//       display: inline;
+//       margin: 0 10px;
+//       span {
+//         color: #2d3538;
+//       }
+//     }
+//   }
+// }
 
 /* Welcome - Index Page Style */
 
 #welcome {
 
   background-color: rgb(131, 196, 216);
+
+  .navbar-default {
+    background-color: rgb(131, 196, 216);
+    border: none;
+  }
 
   .container {
     display: block;
@@ -139,8 +180,12 @@ button a {
 
   .btn {
     background-color: #2d3538;
+    border-radius: 0;
+    border: none;
+    transition: 1s;
     &:hover {
-      background-color: rgb(240, 220, 107);
+      transition: 0.5s;
+      background-color: rgb(220, 220, 220);
       border: none;
       color: black;
     }

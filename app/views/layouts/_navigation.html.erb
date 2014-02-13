@@ -12,24 +12,31 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-          <li class="nav-text"><%= "Logged in as #{current_user.name}" %></li>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right navbar-tiles logout">
           <li><%= link_to 'Log out', logout_path, method: 'delete' %></li>
-        <% else %>
-          <li><%= link_to 'Log in', login_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navbar-tiles current-user">
+          <li class="nav-text"><%= "Logged in as #{current_user.name}" %></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right navbar-tiles signup">  
           <li><%= link_to 'Sign up', new_user_path %></li>
-        <% end %>
-      </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navbar-tiles login">  
+          <li><%= link_to 'Log in', login_path %></li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </nav>
-<div class="search">
+
+<!-- <div class="search">
   <ul>
     <li><span>Filter sites by:</span></li>
     <li>Category</li>
     <li>App Type</li>
   </ul>
-</div>  
+</div>   -->
 
 <!-- "#{link_to("#{current_user.name}", tools_path)}" + --> 
