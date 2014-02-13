@@ -1,19 +1,29 @@
+<% @page = "tool-show" %>
 <% @navigation = 'layouts/navigation' %>
 
-<div class="container">
-  
-  <h2>Category: <%= render @tool.categories %></h2>
-  
-  <div class="screenshot">Image!</div>
+<div class="row">
 
-  <div>
-    <h3><%= @tool.name %></h3>
-    <h4><%#= render @tool.app_types %></h4>    
-    <h4><%= @tool.desc %></h4>
-    <h4><a href="<%= @tool.url %>"><%= @tool.url %></a></h4>
+  <div class="col-md-6">
+    <div class="tool-screenshot">
+      <%= @tool.screenshot_file_size ? image_tag( @tool.screenshot.url , width: '540') : "" %>
+    </div>
   </div>
-  
-  <br><br>
-  <%= link_to "Return to all submissions", tools_path %>
 
+  <div class="col-md-6">
+    <div class="tool-info">
+
+      <h1><%= @tool.name %></h1>
+      <h2>Category: <%= render @tool.categories %></h2><br><br><br>
+      <h4><%= @tool.app_type_id %></h4>    
+      <h4><%= @tool.desc %></h4>
+      <h4><a href="<%= @tool.url %>"><%= @tool.url %></a></h4>
+
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+<div class="row">
+  <%= link_to "Return to all submissions", tools_path %>
 </div>

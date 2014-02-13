@@ -1,32 +1,68 @@
 
+/* Sass Variables */
+
 $font-size-base: 16px;
 
-$navbar-height: 80px;
-$navbar-default-color: white;
-$navbar-default-link-color: #83c4d8;
-$navbar-default-link-hover-color: black;
-$navbar-default-bg: #2d3538;
+$navbar-height: 60px;
+$navbar-default-bg: rgb(131, 196, 216);
 $navbar-border-radius: 0px;
+
+$navbar-default-color: white;
+$navbar-default-brand-color: white;
+$navbar-default-link-color: black;
+$navbar-default-link-hover-color: rgb(240, 220, 107);
+
+/* Bootstrap Import */
+
+@import "bootstrap";
+
+/* Font Imports */
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(http://fonts.googleapis.com/css?family=Gilda+Display);
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script);
-@import "bootstrap";
+
+/* Master Style */
 
 body {
   background-color: white;
   font-family: 'Lato', cursive;
 }
 
-.navtext {
-  color: white;
-  padding: 30px 0;
-  font-size: 14px;
+/* Navigation Style */
+
+.nav-custom {
+  padding-left: 0;
 }
 
-.navtext a {
-  padding: 0px 0px !important;
+.navbar-header {
+  background-color: #2d3538;
+  padding: 0 14px 0 24px;
+  img {
+    float: left;
+    margin-top: 17px;
+    margin-right: 4px;
+  }
 }
+
+.navbar-brand {
+  font-size: 26px;
+}
+
+// .navbar-nav {
+//   background-color: rgb(240, 220, 107);
+// }
+
+.nav-text {
+  color: white;
+  padding: 19px 15px 0 0;
+  // font-size: 14px;
+  text-align: center;
+}
+
+// .nav-text a {
+//   padding: 0px 0px !important;
+// }
 
 button a {
   color: white;
@@ -36,20 +72,22 @@ button a {
   }
 }
 
+/* Welcome - Index Page Style */
+
 #welcome {
 
-  //Doesn't work -- have to use actual classes here because variables need to be loaded in
-  $navbar-height: 60px;
-  $btnPrimaryBackground: tomato;
+  background-color: rgb(131, 196, 216);
 
-  // btn btn-primary btn-lg {
-  //   background-color: tomato !important;
-  // }
-
-  background-color: #2d3538;
+  .container {
+    display: block;
+  }
 
   #content {
     margin: 60px 0 0 40px;
+  }
+
+  div {
+    display: inline-block;
   }
 
   h1 {
@@ -59,18 +97,10 @@ button a {
   }
 
   h2 {
-    color: rgb(175,175,175);
+    color: rgb(50,50,50);
     span {
       color: tomato;
     }
-  }
-
-  div {
-    display: inline-block;
-  }
-
-  .container {
-    display: block;
   }
 
   #logo {
@@ -80,22 +110,48 @@ button a {
   #banner {
     margin-left: 60px;
   }
+
+  .btn {
+    background-color: #2d3538;
+    &:hover {
+      background-color: tomato;
+      color: black;
+    }
+  }
+
 }
 
-.screenshot {
-  height: 200px;
-  width: 200px;
-  border: 5px solid skyblue;
-  float: left;
-  margin-right: 30px;
-  margin-top: 5px;
-}
+/* Tools - Index Page Style */
 
 .table {
   table-layout: fixed;
   word-wrap: break-word;
 }
 
-.override {
-  vertical-align: text-top;
+/* Tools - Show Page Style */
+
+#tool-show {
+
+  background-color: rgb(240, 240, 240);
+
+  .tool-screenshot {
+    float: left;
+    margin-right: 30px;
+    margin-top: 50px;
+  }
+
+  .tool-screenshot img {
+    border: 5px solid #83c4d8;
+  }
+
+  .tool-info {
+    margin-top: 50px;
+    padding: 30px 50px;
+    background-color: white;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
 }
