@@ -4,12 +4,12 @@
 $font-size-base: 16px;
 
 $navbar-height: 60px;
-$navbar-default-bg: rgb(131, 196, 216);
+$navbar-default-bg: rgb(50, 50, 50);
 $navbar-border-radius: 0px;
 
 $navbar-default-color: white;
-$navbar-default-brand-color: white;
-$navbar-default-link-color: black;
+$navbar-default-brand-color: rgb(240, 220, 107);
+$navbar-default-link-color: white;
 $navbar-default-link-hover-color: rgb(240, 220, 107);
 
 /* Bootstrap Import */
@@ -31,12 +31,17 @@ body {
 
 /* Navigation Style */
 
+.navbar {
+  // margin-bottom: 40px;
+  margin-bottom: 0;
+}
+
 .nav-custom {
   padding-left: 0;
 }
 
 .navbar-header {
-  background-color: #2d3538;
+  background-color: rgb(25, 25, 25);
   padding: 0 14px 0 24px;
   img {
     float: left;
@@ -54,7 +59,7 @@ body {
 // }
 
 .nav-text {
-  color: white;
+  color: rgb(200, 200, 200);
   padding: 19px 15px 0 0;
   // font-size: 14px;
   text-align: center;
@@ -69,6 +74,27 @@ button a {
   &:hover {
     color: white;
     text-decoration: none;
+  }
+}
+
+/* Search Bar Style */
+
+.search {
+  height: 60px;
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 20px;
+  ul {
+    padding: 18px 0;
+    float: right;
+    font-size: 16px;
+    margin-right: 20px;
+    li {
+      display: inline;
+      margin: 0 10px;
+      span {
+        color: #2d3538;
+      }
+    }
   }
 }
 
@@ -114,7 +140,8 @@ button a {
   .btn {
     background-color: #2d3538;
     &:hover {
-      background-color: tomato;
+      background-color: rgb(240, 220, 107);
+      border: none;
       color: black;
     }
   }
@@ -123,9 +150,50 @@ button a {
 
 /* Tools - Index Page Style */
 
-.table {
-  table-layout: fixed;
-  word-wrap: break-word;
+#tool-index {
+
+  .portfolio-image {
+    width: 250px;
+    height: 200px;
+    border: 6px solid rgb(100, 100, 100);
+    display: inline-block;
+    margin: 20px;
+    margin-left: 0; 
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 0px;
+    img {
+      height: 100%;
+    }
+  }
+
+  .portfolio-desc {
+    background-color: rgb(131, 196, 216);
+    width: 250px;
+    height: 60px;
+    margin: 0 20px;
+    margin-left: 0;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    padding: 6px;
+    padding-left: 10px;
+    h2 {
+      color: white;
+      font-size: 15px;
+      margin: 0;
+      font-weight: bold;
+    }
+    p {
+      color: black;
+      font-size: 11px;
+    }
+  }
+
+  .table {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+
 }
 
 /* Tools - Show Page Style */
