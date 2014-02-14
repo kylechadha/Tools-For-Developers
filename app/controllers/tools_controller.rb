@@ -4,6 +4,10 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
 
+  def list
+    @tools = Tool.all
+  end
+
   def show
     @tool = Tool.find(params[:id])
   end

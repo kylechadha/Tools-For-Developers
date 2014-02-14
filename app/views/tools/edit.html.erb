@@ -2,45 +2,52 @@
 
 <h1>Edit Resource</h1>
 
- <%= form_for @tool do |f| %>
-  <fieldset>
-    <%= f.label :app_type %><br>
-    <%= f.select :app_type_id, AppType.all.collect {|a| a.name} %>
-<!--     <div id="other">
-      Other:<%#= f.text_field :app_type_id %>
-    </div> -->
-  </fieldset>
+  <%= form_for @tool do |f| %>
+    <fieldset>
+      <%= f.label :app_type %><br>
+      <%= f.select :app_type_id, AppType.all.collect {|a| a.name} %>
+<!--       <div id="other">
+        Other:<%= f.text_field :app_type_id %>
+      </div> -->
+    </fieldset>
 
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div>
-    <%= f.label :desc %>
-    <%= f.text_field :desc %>
-  </div>
+    <div>
+      <%= f.label :desc %>
+      <%= f.text_area :desc, rows: 10 %>
+    </div>
+    
+    <div>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
   
-  <div>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
+    <fieldset>
+      <%= f.label :category %><br>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    </fieldset>
+
+    <div>
+      <%= f.label :screenshot %>
+      <%= f.file_field :screenshot %>
+    </div>
+    <br>
+    <div><%= f.submit %></div>
+  
+  <% end %>
+
+  <br><br>
+  <div class="row">
+    <%= link_to "Return to all submissions", tools_path %>
   </div>
 
-  <fieldset>
-    <%= f.label :category %><br>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  </fieldset>
+</div>
 
-  <div>
-    <%= f.label :screenshot %>
-    <%= f.file_field :screenshot %>
-  </div>
-  <br>
-  <div><%= f.submit %></div>
 
-<% end %>
-<br>
-<%= link_to "Back", tools_path %>
 
 <!-- // <script>
 //   $("#tool_app_type_id").change(function(){

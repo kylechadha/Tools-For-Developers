@@ -11,7 +11,7 @@
   <%= render @navigation %>
 </header>
 
-<%#= if (page == "welcome") %>
+<% unless (@page == "welcome") %>
   <div class="sidebar">
     <ul id="filters">
       <a href="#" data-filter="*">
@@ -35,7 +35,7 @@
       <a href="#" data-filter=".Typography"><li>Typography</li></a>
     </ul>
   </div>
-<%# end %>
+<% end %>
 
 <div class="container">
   <%= yield %>

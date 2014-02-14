@@ -1,7 +1,8 @@
 
 # User.destroy_all
-Category.destroy_all
 AppType.destroy_all
+Category.destroy_all
+Tool.destroy_all
 
 AppType.create([
   { name: "Chrome Extension" },
