@@ -2,9 +2,26 @@
 <% @navigation = 'layouts/navigation' %>
 
 <div class="row">
+  <ul id="filters">
+    <li><a href="#" data-filter="*">Show All</a></li>
+    <li><a href="#" data-filter=".Coding, .Workflow">Coding Workflow</a></li>
+    <li><a href="#" data-filter=".Clean, .Code">Clean Code</a></li>
+    <li><a href="#" data-filter=".Testing">Testing</a></li>
+    <li><a href="#" data-filter=".Debugging">Debugging</a></li>
+    <li><a href="#" data-filter=".Workspace">Workspace</a></li>
+    <li><a href="#" data-filter=".Productivity">Productivity</a></li>
+    <li><a href="#" data-filter=".Mobile">Mobile</a></li>
+    <li><a href="#" data-filter=".Design">Design</a></li>
+    <li><a href="#" data-filter=".Color">Color</a></li>
+    <li><a href="#" data-filter=".Typography">Typography</a></li>
+  </ul>
+</div>
+
+
+<div class="row" id="toolview">
 
   <% @tools.each do |tool| %>
-    <div class="col-md-4 box">
+    <div class="col-md-4 box <%= render tool.categories %>">
 
     <%= link_to tool_path(tool) do %>
       <div class="portfolio">
@@ -34,4 +51,20 @@ $(function(){
       overlay_background:'#333'
     });
 });
+</script>
+<script>
+var $toolview = $('#toolview');
+$toolview.isotope({
+  // options
+  // itemSelector : '.portfolio',
+  // layoutMode : 'fitRows'
+  // filter: '.Debugging'
+});
+
+$('#filters a').click(function(){
+  var selector = $(this).attr('data-filter');
+  $toolview.isotope({ filter: selector });
+  return false;
+});
+
 </script>
