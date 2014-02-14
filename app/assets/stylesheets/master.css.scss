@@ -96,6 +96,11 @@ body {
   padding-bottom: 19px;
 }
 
+.add-resouce {
+  padding-right: 20px;
+  background-color: darken(rgb(131, 196, 216), 20%);
+}
+
 .navbar-header {
   background-color: rgb(131, 196, 216);
   padding: 0 14px 0 24px;
@@ -118,6 +123,46 @@ button a {
   &:hover {
     color: white;
     text-decoration: none;
+  }
+}
+
+/* Sidebar Style */
+
+.sidebar {
+  float: left;
+  height: 100%;
+  position: fixed;
+  width: 75px;
+  ul {
+    margin: 0;
+    margin-top: -40px;
+    padding: 0;
+    list-style-type: none;
+  }
+  a {
+    font-size: 12px;
+    font-weight: normal;
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+    li {
+      height: 75px;
+      width: 75px;
+      background-color: darken(rgb(131, 196, 216), 20%);
+      padding: 5px;
+      text-align: center;
+      transition: 2s;
+      &:hover {
+        transition: 1s;
+        background-color: lighten(rgb(131, 196, 216), 20%);
+        color: black;
+      }
+      span {
+        padding-top: 5px;
+        font-size: 24px;
+      }
+    }
   }
 }
 
