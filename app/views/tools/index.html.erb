@@ -2,15 +2,36 @@
 <% @navigation = 'layouts/navigation' %>
 
 <div class="row">
+
   <% @tools.each do |tool| %>
-    <div class="col-md-3 ">
-      <div class="portfolio-image">
-        <%= tool.screenshot_file_size ? image_tag( tool.screenshot.url) : "" %>
+    <div class="col-md-4 box">
+
+    <%= link_to tool_path(tool) do %>
+      <div class="portfolio">
+        <div class="portfolio-image">
+          <%= tool.screenshot_file_size ? image_tag(tool.screenshot.url) : ""  %>
+        </div>
+        <div class="portfolio-desc">
+          <h2><%= tool.name %></h2>
+          <p><%= tool.desc %></p>
+        </div>
       </div>
-      <div class="portfolio-desc">
-        <h2><%= tool.name %></h2>
+      <div class="contenthover">
+        <h3><%= tool.name %></h3>
         <p><%= tool.desc %></p>
+        <p></p>
       </div>
+    <% end %>
+
     </div>
   <% end %>
+
 </div>
+
+<script>
+$(function(){
+    $('.portfolio').contenthover({
+      overlay_background:'#333'
+    });
+});
+</script>

@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.contenthover.min
+//= require jquery.isotope.min
 //= require turbolinks
 //= require_tree .
