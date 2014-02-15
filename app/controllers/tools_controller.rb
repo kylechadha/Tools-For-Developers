@@ -1,7 +1,23 @@
 class ToolsController < ApplicationController
 
+  before_action :login_required, except: [:index, :show]
+
   def index
     @tools = Tool.all
+
+    if params[:show] == "all"
+      @tools = Tool.all
+    elsif params[:show] == "abc"
+      @tools = Tool.all[0..3]
+    elsif params[:show] == "bcd"
+      # @tools = Tool.where(name: "Alignment")
+    elsif params[:show] == "cde"
+      # @tools = Tool.where(name: "Colorpicker")
+    end
+
+    @show = params[:show]
+
+    # @tools = Tool.paginate(:page => 1, :limit => 10).desc(:_id)
   end
 
   def list
@@ -12,14 +28,13 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
   end
 
-
   def new
     @tool = Tool.new
   end
 
   def create
     @tool = Tool.new(tool_params.merge(user_id: current_user.id))
-
+    
     if @tool.save
       redirect_to action: 'index'
       flash[:notice] = "Successfully submitted resource!"
@@ -27,7 +42,6 @@ class ToolsController < ApplicationController
       render action: 'new'
     end
   end
-
 
   def edit
     @tool = Tool.find(params[:id])
@@ -44,13 +58,11 @@ class ToolsController < ApplicationController
     end
   end
 
-
   def destroy
     @tool = Tool.find(params[:id])
     @tool.destroy
     redirect_to action: 'index'
   end
-
 
   private
   def tool_params

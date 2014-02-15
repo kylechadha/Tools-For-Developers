@@ -8,7 +8,7 @@
 </head>
 <body id="<%= @page %>">
 <header>
-  <%= render @navigation %>
+  <%#= render @navigation %>
 </header>
 
 <% unless (@page == "welcome") %>
@@ -34,8 +34,8 @@
       <a href="#" data-filter=".Color"><li>Color</li></a>
       <a href="#" data-filter=".Typography"><li>Typography</li></a>
     </ul>
-  </div>
-<% end %>
+  </div>-->
+<% end %> 
 
 <div class="container">
   <%= yield %>

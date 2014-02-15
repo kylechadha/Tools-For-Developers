@@ -13,10 +13,15 @@ class AuthsController < ApplicationController
       if user.authenticated?(params[:user][:password])
         session[:user_id] = user.id
         flash[:notice] = "Welcome, #{current_user.name}!"
-        redirect_to tools_path
+        if session[:redirect]
+          redirect_to session[:redirect]
+          session[:redirect] = nil
+        else
+          redirect_to tools_path
+        end
       else
-        redirect_to login_path
         flash[:notice] = "Incorrect username or password."
+        redirect_to login_path
       end
     rescue 
       redirect_to login_path

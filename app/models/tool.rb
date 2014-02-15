@@ -14,7 +14,6 @@ class Tool
   field :name, type: String
   field :desc, type: String
   field :url, type: String
-  # field :screenshot, type: String
   has_mongoid_attached_file :screenshot
 
   belongs_to :user

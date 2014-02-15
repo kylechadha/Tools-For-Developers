@@ -206,6 +206,7 @@ DEPENDENCIES
   jquery-rails
   mongoid!
   mongoid-paperclip
+  pry
   rack-livereload
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)

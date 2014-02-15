@@ -248,23 +248,25 @@ button a {
 
 #tool-index {
 
-  a:hover {
-    text-decoration: none;
+  .col-md-3 {
+    width: 24.5%;
   }
 
   .box {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    margin-right: 5px;
   }
 
   .portfolio {
-    width: 350px;
+    width: 270px;
   }
 
   .portfolio-image {
     // margin: 10px;
-    width: 350px;
+    width: 270px;
     height: 200px;
-    border: 5px solid rgb(100, 100, 100);
+    // border: 5px solid darken(rgb(131, 196, 216), 0%);
+    border: 5px solid darken(rgb(100, 100, 100), 0%);
     display: inline-block;
     overflow: hidden;
     padding: 0;
@@ -272,26 +274,38 @@ button a {
     img {
       height: 100%;
     }
+    background-size: cover;
+    background-position: center;
   }
 
   .portfolio-desc {
-    background-color: rgb(131, 196, 216);
-    width: 350px;
+    // background-color: darken(rgb(131, 196, 216), 30%);
+    background-color: darken(rgb(100, 100, 100), 30%);
+    width: 270px;
     height: 60px;
     margin-top: -5px;
-    padding: 6px;
-    padding-left: 10px;
+    padding: 5px 10px;
     h2 {
-      color: black;
+      color: white;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: 400;
       margin: 0;
     }
     p {
-      color: white;
+      color: rgb(131, 196, 216);
       font-weight: normal;
       font-size: 12px;
     }
+  }
+
+  .contenthover {
+    p {
+      color: black;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 
   .table {

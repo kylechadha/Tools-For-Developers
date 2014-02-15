@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :page
+  helper_method :navigation
 
   def current_user
     if session[:user_id]
@@ -15,23 +17,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :page
+  def login_required
+    unless current_user
+      flash[:error] = "You must be logged in to do that!"
+      session[:redirect] = request.url
+      redirect_to login_path
+    end
+  end
 
   def page
     @page || ''
   end
 
-  helper_method :navigation
-
   def navigation
     @navigation || 'layouts/navigation'
   end
   
-  def login_required
-    unless current_user
-      flash[:error] = "You must be logged in to do that!"
-      redirect_to root_path
-    end
-  end
 
 end

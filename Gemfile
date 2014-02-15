@@ -38,6 +38,7 @@ end
 gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
 
 group :development do
+  gem 'pry'
   gem 'guard'
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
