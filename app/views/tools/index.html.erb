@@ -4,7 +4,7 @@
 <div class="row" id="toolview">
 
   <% @tools.each do |tool| %>
-    <div class="col-md-3 box <%= render tool.categories %>">
+    <div class="col-md-3 col-sm-6 box <%= render tool.categories %>">
 
     <%= link_to tool_path(tool) do %>
       <div class="portfolio">
@@ -18,7 +18,7 @@
       <div class="contenthover">
         <h3><%= tool.name %></h3>
         <p><%= tool.desc %></p>
-        <p></p>
+        <h4><%= tool.app_type_id %></p>
       </div>
     <% end %>
 

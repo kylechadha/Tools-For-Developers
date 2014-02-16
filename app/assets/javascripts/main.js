@@ -1,7 +1,7 @@
 
 $(function(){
     $('.portfolio').contenthover({
-      overlay_background:'rgb(131, 196, 216)'
+      overlay_background:'#FF9F33'
     });
 });
 

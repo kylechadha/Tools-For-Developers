@@ -1,41 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DevToolsApp</title>
+  <title>Dev Spades</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag "ace-of-spades.png" %>
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= @page %>">
 <header>
-  <%#= render @navigation %>
+  <%= render @navigation %>
 </header>
-
-<% unless (@page == "welcome") %>
-  <div class="sidebar">
-    <ul id="filters">
-      <a href="#" data-filter="*">
-        <li>Show All<br>
-          <span></span>
-        </li>
-      </a>
-      <a href="#" data-filter=".Coding, .Workflow"><li>Coding Workflow</li></a>
-      <a href="#" data-filter=".Clean, .Code"><li>Clean Code</li></a>
-      <a href="#" data-filter=".Testing"><li>Testing</li></a>
-      <a href="#" data-filter=".Debugging"><li>Debugging</li></a>
-      <a href="#" data-filter=".Workspace"><li>Workspace</li></a>
-      <a href="#" data-filter=".Productivity"><li>Productivity</li></a>
-      <a href="#" data-filter=".Mobile">
-        <li>Mobile<br><span class="glyphicon glyphicon-phone"></span></li>
-      </a>
-      <a href="#" data-filter=".Design">
-        <li>Design</li>
-      </a>
-      <a href="#" data-filter=".Color"><li>Color</li></a>
-      <a href="#" data-filter=".Typography"><li>Typography</li></a>
-    </ul>
-  </div>-->
-<% end %> 
 
 <div class="container">
   <%= yield %>
