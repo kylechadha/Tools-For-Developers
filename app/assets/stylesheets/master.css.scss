@@ -39,99 +39,11 @@ body {
 
 /* Navigation Style */
 
-.navbar {
-  margin-bottom: 40px;
-}
-
-.navbar-default {
-  border: none;
-}
-
-.navbar-collapse {
-  padding-right: 0;
-}
-
-.nav-custom {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.navbar-nav {
-  padding-left: 25px;
-  padding-right: 10px;
-}
-
-.navbar-tiles{
-  transition: background-color 2s, color 2s, border-bottom 0.1s;
-  box-sizing: border-box;
-  height: 60px;
-  &:hover {
-    transition: background-color 0.5s, color 0.5s, border-bottom 0s;
-    background-color: lighten(#444, 55%);
-    color: black;
-    border-bottom: 3px solid black;
-  }
-}
-
-.signup {
-  background-color: #444;
-  padding-right: 17px;
-  padding-left: 35px;
-}
-
-.login {
-  background-color: #409f89;
-  padding-right: 20px;
-}
-
-.logout {
-  background-color: #444;
-}
-
-.current-user {
-  background-color: #409f89;
-  padding-bottom: 19px;
-}
-
-.add-resouce {
-  padding-right: 20px;
-  background-color: darken(rgb(131, 196, 216), 20%);
-}
-
-.navbar-header {
-  background-color: rgb(131, 196, 216);
-  padding: 0 14px 0 24px;
-  img {
-    float: left;
-    margin-top: 17px;
-    margin-right: 4px;
-  }
-}
-
-.nav-text {
-  color: white;
-  padding: 19px 15px 0 0;
-  // font-size: 14px;
-  text-align: center;
-}
-
-button a {
-  color: white;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-
-/* Sidebar Style */
-
-.sidebar {
+#navigation {
 
   height: 65px;
   z-index: 100;
-  box-shadow: 5px 5px 10px #CCC;
-  // box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4);
-  // margin-bottom: 40px;
+  box-shadow: 0px 5px 10px #CCC;
   text-align: center;
   background-color: darken(rgb(131, 196, 216), 45%);
   width: 100%;
@@ -214,26 +126,39 @@ button a {
   }
 }
 
-/* Search Bar Style */
+/* Sidebar Style */
 
-// .search {
-//   height: 60px;
-//   background-color: rgb(230, 230, 230);
-//   margin-bottom: 20px;
-//   ul {
-//     padding: 18px 0;
-//     float: right;
-//     font-size: 16px;
-//     margin-right: 20px;
-//     li {
-//       display: inline;
-//       margin: 0 10px;
-//       span {
-//         color: #2d3538;
-//       }
-//     }
-//   }
-// }
+#sidebar {
+  list-style-type: none;
+  display: list-item;
+  color: white;
+  -webkit-padding-start: 0px;
+  .logo {
+    font-family: 'Lato', cursive;
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    &:hover {
+      background-color: #181818;
+    }
+  }
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li {
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #1C1C1C;
+    width: 100%;
+    padding: 14px;
+    padding-left: 25px;
+    &:hover {
+      background-color: lighten(#181818, 20%);
+    }
+  }
+}
 
 /* Welcome - Index Page Style */
 

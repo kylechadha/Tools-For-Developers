@@ -1,6 +1,6 @@
 DevToolsApp::Application.routes.draw do
 
-  root 'welcome#index'  
+  root 'tools#index'  
 
   get 'login' => 'auths#new'
   delete 'logout' => 'auths#destroy'

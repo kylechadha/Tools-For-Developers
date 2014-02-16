@@ -52,7 +52,7 @@ body {
 	position: relative;
 	z-index: 1; /* Site sits above Slidebars */
 	/*box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0); Fixes some translation issues. */
-	background-color: #ffffff; /* Default background colour, overwrite this with your own css. */
+	background-color: rgb(240, 240, 240); /* Default background colour, overwrite this with your own css. */
 }
 
 /* ---------------
@@ -67,7 +67,7 @@ body {
 	top: 0;
 	z-index: 0;  Slidebars sit behind sb-site. 
 	visibility: hidden; /* Initially hide the Slidebars. */
-	background-color: #222222; /* Default Slidebars background colour, overwrite this with your own css. */
+	background-color: #181818; /* Default Slidebars background colour, overwrite this with your own css. */
 }
 
 html.sb-android .sb-slidebar { /* Unfix Slidebars for Android Browser < 3 */
