@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Dev Spades</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= favicon_link_tag "ace-of-spades.png" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body id="<%= @page %>">
-<header>
-  <%= render @navigation %>
-</header>
 
-<div class="container">
-  <%= yield %>
-</div>
+<body id="<%= @page %>">
+
+  <div id="sb-site">
+    <header>
+      <%= render @navigation %>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div class="sb-slidebar sb-right">
+    Herro prease.
+  </div>
 
 </body>
 </html>

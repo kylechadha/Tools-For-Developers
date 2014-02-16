@@ -138,7 +138,7 @@ button a {
   position: fixed;
 
   .navbar-brand {
-    margin-right: -140px;
+    margin-right: -130px;
     padding-left: 35px;
     font-size: 32px;
     line-height: 18px;
@@ -146,6 +146,14 @@ button a {
     font-weight: 300;
     transition: 1s;
     font-family: 'Lato';
+  }
+
+  .hamburger {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    float: right;
+    margin: 20px 30px 0 -60px;
+    cursor: pointer;
   }
 
   ul {

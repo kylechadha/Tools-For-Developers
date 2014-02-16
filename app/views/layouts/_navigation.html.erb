@@ -1,22 +1,27 @@
 <div class="sidebar">
   <ul id="filters">
-    <%= image_tag("ace-of-spades.png", class: "squid") %>
     <%= link_to "Spades", root_path, { class: "navbar-brand" } %>
     <a href="#" data-filter="*">
-      <li>Show All<br>
-        <span></span>
-      </li>
+      <li>Show All<br><%= image_tag("show-all.svg", size:"25", class: "nav-icon") %></li>
     </a>
     <a href="#" data-filter=".Coding, .Workflow">
       <li>Codeflow<br><%= image_tag("coding-workflow.svg", size:"35", class: "nav-icon", style: "margin-top:-1px") %></li>
     </a>
     <a href="#" data-filter=".Clean, .Code">
-      <li>Clean Code<br><%= image_tag("clean-code.svg", size:"27", class: "nav-icon") %></li>
+      <li>Clean Code<br><%= image_tag("clean-code.svg", size:"25", class: "nav-icon") %></li>
     </a>
-    <a href="#" data-filter=".Testing"><li>Testing</li></a>
-    <a href="#" data-filter=".Debugging"><li>Debugging</li></a>
-    <a href="#" data-filter=".Workspace"><li>Workspace</li></a>
-    <a href="#" data-filter=".Productivity"><li>Productivity</li></a>
+    <a href="#" data-filter=".Testing">
+      <li>Testing<br><%= image_tag("testing.svg", size:"26", class: "nav-icon") %></li>
+    </a>
+    <a href="#" data-filter=".Debugging">
+      <li>Debugging<br><%= image_tag("debugging1.svg", size:"23", class: "nav-icon") %></li>
+    </a>
+    <a href="#" data-filter=".Workspace">
+      <li>Workspace<br><%= image_tag("workspace.svg", size:"30", class: "nav-icon", style: "margin-top:3px") %></li>
+    </a>
+    <a href="#" data-filter=".Productivity">
+      <li>Productivity<br><%= image_tag("productivity.svg", size:"25", class: "nav-icon") %></li>
+    </a>
     <a href="#" data-filter=".Mobile">
       <li>Mobile<br><%= image_tag("mobile.svg", size:"25", class: "nav-icon") %></li>
     </a>
@@ -29,6 +34,7 @@
     <a href="#" data-filter=".Typography">
       <li>Typography<br><%= image_tag("typography.svg", size:"25", class: "nav-icon") %></li>
     </a>
+      <%= image_tag("menu.svg", size:"25", class: "sb-toggle-right hamburger") %>
   </ul>
 </div>
 
