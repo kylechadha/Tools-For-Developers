@@ -1,12 +1,9 @@
+<% @page = "user-show" %>
 <% @navigation = 'layouts/navigation' %>
   
-<h2><%= @user.name %> <span>(<%= @user.email %>)</span></h2>
+<h1><%= @user.name %><span><%= @user.email %><br>Los Angeles, CA</span></h1>
 
-<br>
-<h2>Your Favorites</h2>
-
-<br>
-<h2>Your Submissions</h2>
+<br><h3>Your Submissions</h3>
 <table class="table table-striped">
 <tr>
   <th>Screenshot</th>

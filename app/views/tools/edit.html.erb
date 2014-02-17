@@ -1,60 +1,67 @@
+<% @page = "tool-new-edit" %>
 <% @navigation = 'layouts/navigation' %>
 
-<h1>Edit Resource</h1>
 
-  <%= form_for @tool do |f| %>
-    <fieldset>
-      <%= f.label :app_type %><br>
-      <%= f.select :app_type_id, AppType.all.collect {|a| a.name} %>
-<!--       <div id="other">
-        Other:<%= f.text_field :app_type_id %>
-      </div> -->
-    </fieldset>
+<div class="col-md-3">
+</div>
 
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+<div class="col-md-6">
+
+  <h1>Edit Resource</h1><br>
+
+  <%= form_for @tool, role: "form", html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
     </div>
 
-    <div>
-      <%= f.label :desc %>
-      <%= f.text_area :desc, rows: 10 %>
+    <div class="form-group">
+      <%= f.label :desc, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :desc, rows: 2, class: "form-control" %>
+      </div>
     </div>
     
-    <div>
-      <%= f.label :url %>
-      <%= f.text_field :url %>
+    <div class="form-group">
+      <%= f.label :url, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :url, class: "form-control" %>
+      </div>
     </div>
-  
-    <fieldset>
-      <%= f.label :category %><br>
-      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    </fieldset>
 
-    <div>
-      <%= f.label :screenshot %>
-      <%= f.file_field :screenshot %>
+    <div class="form-group">
+      <%= f.label :app_type, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10 select-style">
+        <%= f.select :app_type_id, AppType.all.collect {|a| a.name}, html_option = { class: "form-control" } %>
+      </div>
     </div>
-    <br>
+
+    <div class="form-group">
+      <%= f.label :category, class: "col-sm-2 control-label" %><br>
+      <div class="col-sm-10 checkbox-style inline">
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :screenshot, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.file_field :screenshot, class: "form-control" %>
+      </div>
+    </div>
+
     <div><%= f.submit %></div>
-  
   <% end %>
 
-  <br><br>
+  <br>
   <div class="row">
-    <%= link_to "Return to all submissions", tools_path %>
+    <%= link_to "Go back", user_path(current_user) %>
   </div>
 
 </div>
 
-
-
-<!-- // <script>
-//   $("#tool_app_type_id").change(function(){
-//     if (this.selectedIndex == 6) {
-//       $("#other").show();
-//     } else {
-//       $("#other").hide();
-//     }
-//   });
-// </script> -->
+<div class="col-md-3">
+</div>

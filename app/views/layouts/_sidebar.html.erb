@@ -3,7 +3,7 @@
   <% if current_user %>
     <li class="logo"><%= current_user.name %></li>
     <%= link_to root_path do %><li>Home</li><% end %>
-    <%= link_to user_path(current_user) do %><li>Favorites</li><% end %>
+    <%= link_to user_path(current_user) do %><li>Admin</li><% end %>
     <%= link_to logout_path, method: 'delete' do %><li>Log out</li><% end %>
     <%= link_to root_path do %><li>About</li><% end %>       
   <% else %>
