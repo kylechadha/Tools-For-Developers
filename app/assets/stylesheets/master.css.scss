@@ -69,7 +69,7 @@ body {
 
   .navbar-brand {
     margin-right: -130px;
-    padding-left: 35px;
+    padding-left: 30px;
     font-size: 32px;
     line-height: 18px;
     color: white;
@@ -78,18 +78,29 @@ body {
     font-family: 'Lato';
   }
 
-  .hamburger {
+
+
+  .right-menu {
     filter: invert(100%);
     -webkit-filter: invert(100%);
     float: right;
-    margin: 20px 30px 0 -60px;
-    cursor: pointer;
+    .hamburger {
+      margin: 20px 30px 0 -60px;
+      cursor: pointer;
+    }
+    .add-new {
+      margin: 18px 75px 0 -85px;
+    }
+    a {
+      border-left: none;
+    }
   }
 
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    display: inline;
   }
 
   a {

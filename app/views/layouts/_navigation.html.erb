@@ -1,6 +1,6 @@
 <div id="navigation">
+  <%= link_to "Spades", root_path, { class: "navbar-brand" } %>
   <ul id="filters">
-    <%= link_to "Spades", root_path, { class: "navbar-brand" } %>
     <a href="#" data-filter="*">
       <li>Show All<br><%= image_tag("show-all.svg", size:"25", class: "nav-icon") %></li>
     </a>
@@ -34,6 +34,11 @@
     <a href="#" data-filter=".Typography">
       <li>Typography<br><%= image_tag("typography.svg", size:"25", class: "nav-icon") %></li>
     </a>
-      <%= image_tag("menu-black.svg", size:"25", class: "sb-toggle-right hamburger") %>
+  </ul>
+  <ul class="right-menu">
+    <%= link_to new_tool_path do %>
+      <%= image_tag("plus.svg", size:"23", class: "add-new") %>
+    <% end %>
+    <%= image_tag("menu-black.svg", size:"25", class: "sb-toggle-right hamburger") %>
   </ul>
 </div>
