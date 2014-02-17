@@ -27,6 +27,24 @@ body {
   background-color: rgb(240, 240, 240);
   font-family: 'Maven Pro', cursive;
   font-weight: 300;
+  h1, h2 {
+    margin-top: 0;
+    span {
+      font-size: 22px;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.container {
+  padding-top: 120px;
+}
+
+.table {
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 
 .squid {
@@ -109,7 +127,7 @@ body {
 
       &:hover {
         transition: 0.5s;
-        background-color: lighten(rgb(131, 196, 216), 0%);
+        background-color: lighten(rgb(131, 196, 216), 10%);
         color: black;
         .nav-icon {
           transition: 0.5s;
@@ -160,71 +178,9 @@ body {
   }
 }
 
-/* Welcome - Index Page Style */
-
-#welcome {
-
-  background-color: rgb(131, 196, 216);
-
-  .navbar-default {
-    background-color: rgb(131, 196, 216);
-  }
-
-  .container {
-    display: block;
-  }
-
-  #content {
-    margin: 60px 0 0 40px;
-  }
-
-  div {
-    display: inline-block;
-  }
-
-  h1 {
-    color: white;
-    font-size: 120px;
-    font-family: 'Gilda Display', cursive;
-  }
-
-  h2 {
-    color: rgb(50,50,50);
-    span {
-      color: tomato;
-    }
-  }
-
-  #logo {
-    float: left;
-  }
-
-  #banner {
-    margin-left: 60px;
-  }
-
-  .btn {
-    background-color: #2d3538;
-    border-radius: 0;
-    border: none;
-    transition: 1s;
-    &:hover {
-      transition: 0.5s;
-      background-color: rgb(220, 220, 220);
-      border: none;
-      color: black;
-    }
-  }
-
-}
-
 /* Tools - Index Page Style */
 
 #tool-index {
-
-  #toolview {
-    margin-top: 120px;
-  }
 
   .col-md-3 {
     width: 24.5%;
@@ -249,11 +205,11 @@ body {
     overflow: hidden;
     padding: 0;
     margin: 0;
+    background-size: cover;
+    background-position: center;
     img {
       height: 100%;
     }
-    background-size: cover;
-    background-position: center;
   }
 
   .portfolio-desc {
@@ -291,11 +247,6 @@ body {
     text-decoration: none;
   }
 
-  .table {
-    table-layout: fixed;
-    word-wrap: break-word;
-  }
-
 }
 
 /* Tools - Show Page Style */
@@ -306,21 +257,23 @@ body {
 
   .tool-screenshot {
     float: left;
+    height: 400px;
+    width: 540px;
     margin-right: 30px;
-    margin-top: 50px;
-  }
-
-  .tool-screenshot img {
-    border: 5px solid #83c4d8;
+    background-size: cover;
+    background-position: center;
+    border: 10px solid darken(rgb(131, 196, 216), 45%);
   }
 
   .tool-info {
-    margin-top: 50px;
+    overflow: hidden;
+    font-family: 'Lato', cursive;
+    height: 400px;    
     padding: 30px 50px;
     background-color: white;
-
-    h1 {
-      margin: 0;
+    .tool-apptype {
+      position: absolute;
+      bottom: 25px;
     }
   }
 

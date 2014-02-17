@@ -15,5 +15,4 @@
 //= require jquery.contenthover.min
 //= require jquery.isotope.min
 //= require slidebars.min
-//= require turbolinks
 //= require_tree .

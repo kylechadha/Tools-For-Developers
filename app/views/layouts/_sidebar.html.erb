@@ -1,0 +1,16 @@
+
+<ul id="sidebar">
+  <% if current_user %>
+    <li class="logo"><%= current_user.name %></li>
+    <%= link_to root_path do %><li>Home</li><% end %>
+    <%= link_to user_path(current_user) do %><li>Favorites</li><% end %>
+    <%= link_to logout_path, method: 'delete' do %><li>Log out</li><% end %>
+    <%= link_to root_path do %><li>About</li><% end %>       
+  <% else %>
+    <li class="logo">Menu</li>
+    <%= link_to root_path do %><li>Home</li><% end %>
+    <%= link_to new_user_path do %><li>Sign up</li><% end %>
+    <%= link_to login_path do %><li>Log in</li><% end %>
+    <%= link_to root_path do %><li>About</li><% end %>
+  <% end %>
+</ul>

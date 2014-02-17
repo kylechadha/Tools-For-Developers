@@ -1,8 +1,37 @@
 <% @navigation = 'layouts/navigation' %>
-
-<div class="container">
   
-  <h2><%= @user.name %></h2>
-  <h4><%= @user.email %></h4>
+<h2><%= @user.name %> <span>(<%= @user.email %>)</span></h2>
 
-</div>
+<br>
+<h2>Your Favorites</h2>
+
+<br>
+<h2>Your Submissions</h2>
+<table class="table table-striped">
+<tr>
+  <th>Screenshot</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>URL</th>
+  <th>Category</th>
+  <th>App Type</th>
+  <th>Admin</th>
+</tr>
+<% @user.tools.each do |tool| %>
+<tr>
+  <td><%= tool.screenshot_file_size ? image_tag( tool.screenshot.url , width: '100') : "" %></td>
+  <td><%= tool.name %></td>
+  <td><%= tool.desc %></td>
+  <td><a href="<%= tool.url %>"><%= tool.url %></a></td>
+  <td><ul><%= render tool.categories %></ul></td>
+  <td><%= tool.app_type_id %></td>
+  <td>
+    <ul>
+      <li><%= link_to 'View', tool_path(tool) %></li>
+      <li><%= link_to 'Edit', edit_tool_path(tool) %></li>
+      <li><%= link_to 'Delete', tool, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+    </ul>
+  </td>
+</tr>
+<% end %>
+</table>
