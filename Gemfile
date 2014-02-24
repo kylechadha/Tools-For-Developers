@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'aws-sdk'
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -53,3 +54,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
