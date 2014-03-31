@@ -65,7 +65,7 @@ body {
 	overflow-y: auto; /* Enable vertical scrolling on Slidebars when needed. */
 	position: fixed;
 	top: 0;
-	z-index: 0;  Slidebars sit behind sb-site. 
+	z-index: 0;
 	visibility: hidden; /* Initially hide the Slidebars. */
 	background-color: #181818; /* Default Slidebars background colour, overwrite this with your own css. */
 }
