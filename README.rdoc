@@ -5,3 +5,5 @@ Rails app to help developers explore useful chrome extensions, sublime text pack
   - Rails 4
   - Bootstrap
   - MongoDB
+
+Live at http://dev-tools.herokuapp.com/
