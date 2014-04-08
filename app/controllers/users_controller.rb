@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(params.require(:user).permit(:email, :name, :password))
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to Reddit for Resources!"
+      flash[:notice] = "Welcome to Dev Spades!"
       redirect_to tools_path
     else
       render "new"

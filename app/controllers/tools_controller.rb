@@ -5,19 +5,16 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
 
+    # Exploring custom parameters -- not used in final revision
     if params[:show] == "all"
       @tools = Tool.all
-    elsif params[:show] == "abc"
-      @tools = Tool.all[0..3]
-    elsif params[:show] == "bcd"
-      # @tools = Tool.where(name: "Alignment")
-    elsif params[:show] == "cde"
-      # @tools = Tool.where(name: "Colorpicker")
+    elsif params[:show] == "page1"
+      @tools = Tool.all[0..7]
+    elsif params[:show] == "page2"
+      @tools = Tool.all[8..15]
     end
 
     @show = params[:show]
-
-    # @tools = Tool.paginate(:page => 1, :limit => 10).desc(:_id)
   end
 
   def list
