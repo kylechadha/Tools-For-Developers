@@ -13,13 +13,15 @@
 <body id="<%= @page %>">
 
   <div id="sb-site">
+
     <header>
       <%= render @navigation %>
     </header>
-
+    
     <div class="container">
       <%= yield %>
     </div>
+
   </div>
 
   <div class="sb-slidebar sb-right">
